@@ -1,0 +1,68 @@
+<DOCTYPE html>
+    <head>
+        <title></title>
+    </head>
+<body>
+    <style>
+         body {
+      background-image: url('https://dynamics.folio3.com/blog/wp-content/uploads/2021/07/shutterstock_1927630643.jpg');
+       background-repeat: repeat-y;
+       background-size: 100%;%
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.h2{
+    background-color: #FFF78A;
+    text-align:center;
+    margin-top: 50px;
+}
+h2{
+    text-align:center;
+    color:#EE7214;
+}
+.btn {
+    background-color:#6DB9EF;
+}
+
+        
+    </style>
+
+    <div  class="h2">
+        <h1>Find Your Best Crop Here</h1>
+    </div>
+
+    <h2> Please Enter the conditions</h2>
+
+
+<h6>
+    <center>
+        <form action="{{ url_for('predict')}}" method="post">
+            <label for="nitrogen">nitrogen: </label><br>
+            <input type="text" id="nitrogen" name="nitrogen" placeholder="nitrogen" required="required" /><br><br>
+            <label for="phosphorous">phosphorous:</label><br>
+            <input type="text" id="phosphorous" name="phosphorous" placeholder="phosphorous" required="required" /><br><br>
+                <label for="potassium">potassium:</label><br><br>
+                <input type="text" id="potassium" name="potassium" placeholder="potassium"
+                    required="required" /><br><br>
+                <label for="temperature">temperature:</label><br>
+                <input type="text" id="temperature" name="temperature" placeholder="temperature"
+                    required="required" /><br><br>
+                    <label for="humidity">humidity:</label><br>
+                    <input type="text" id="humidity" name="humidity" placeholder="humidity"
+                        required="required" /><br><br>
+                    <label for="ph">ph:</label><br>
+                    <input type="text" id="ph" name="ph" placeholder="ph" required="required" /><br><br>
+                    <label for="rainfall">rainfall:</label><br>
+                    <input type="text" id="rainfall" name="rainfall" placeholder="rainfall"
+                        required="required" /><br><br>
+                    <button type="submit" class="btn ">Predict</button>
+        </form>
+        <br>
+    </center>
+</h6>
+<h3>
+    <p class="flask-output">{{ prediction_text }}</p>
+</h3>
+
+</body>
+</html>
